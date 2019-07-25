@@ -1,5 +1,5 @@
 {
-  "name": "sample-mithril-app",
+  "name": "compact-json",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/highmountaintea/sample-mithril-app.git"
+    "url": "git+https://github.com/highmountaintea/compact-json.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/highmountaintea/compact-json/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/highmountaintea/compact-json#readme",
   "dependencies": {
     "mithril": "^1.1.6"
   },
