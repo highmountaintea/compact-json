@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/highmountaintea/compact-json#readme",
   "dependencies": {
+    "json-stringify-pretty-compact": "^2.0.0",
+    "loose-json": "^1.1.2",
     "mithril": "^1.1.6"
   },
   "devDependencies": {
