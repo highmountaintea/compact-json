@@ -42,6 +42,16 @@ function toOutput(inp, remUndef, remNull) {
   return outstr;
 }
 
+function generateClicked() {
+  try {
+    output = '';
+    output = toOutput(input, removeUndefined, removeNulls);
+  } catch (e) {
+    console.log(e);
+    output = 'Error happened parsing the input JSON';
+  }
+}
+
 function render() {
   return m('div', [
     m('h3', 'Input:'),
@@ -59,7 +69,7 @@ function render() {
       m('input', { type: 'textbox', value: maxLength, onchange: (ev) => { maxLength = ev.currentTarget.value; } }),
     ),
     m('div',
-      m('button', { onclick: () => { output = toOutput(input, removeUndefined, removeNulls); } }, 'Generate Output'),
+      m('button', { onclick: () => { generateClicked(); } }, 'Generate Output'),
     ),
     m('h3', 'Output:'),
     m('textarea', { rows: 20, style: 'width: 80%;', value: output, onchange: (ev) => { output = ev.currentTarget.value; } }),
