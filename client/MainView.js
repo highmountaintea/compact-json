@@ -55,7 +55,7 @@ function generateClicked() {
 function render() {
   return m('div', [
     m('h3', 'Input:'),
-    m('textarea', { rows: 20, style: 'width: 80%;', value: input, onchange: (ev) => { input = ev.currentTarget.value; } }),
+    m('textarea', { spellcheck: false, rows: 20, style: 'width: 80%;', value: input, onchange: (ev) => { input = ev.currentTarget.value; } }),
     m('div',
       m('input', { type: 'checkbox', checked: removeUndefined, onclick: () => {removeUndefined = !removeUndefined;} }),
       'Remove undefined',
@@ -72,7 +72,7 @@ function render() {
       m('button', { onclick: () => { generateClicked(); } }, 'Generate Output'),
     ),
     m('h3', 'Output:'),
-    m('textarea', { rows: 20, style: 'width: 80%;', value: output, onchange: (ev) => { output = ev.currentTarget.value; } }),
+    m('textarea', { spellcheck: false, rows: 20, style: 'width: 80%;', value: output, onchange: (ev) => { output = ev.currentTarget.value; } }),
     // m('h3', 'Result: ' + JSON.stringify(model.getResult())),
   ]);
 }
