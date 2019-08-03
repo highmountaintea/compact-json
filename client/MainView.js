@@ -4,10 +4,19 @@ const stringify = require("json-stringify-pretty-compact");
 
 // const model = require('./model');
 
+let sample = {
+  params: { id: 'A203', format: 'xml', values: [2, 3], description: null },
+  entries: [
+    { source: 'news outlet', date: '2019-01-01', title: 'Happy New Year', rss: 'acme/2019-01-01-happy-new-year.html' },
+    { source: 'online', date: '2019-01-02', title: 'Holidays continue', rss: 'acme/2019-01-02-holidays-continue.html' },
+  ],
+  options: null
+};
+
 let removeUndefined = true;
 let removeNulls = true;
 let maxLength = '200';
-let input = '';
+let input = JSON.stringify(sample, null, '  ');
 let output = '';
 
 function removeNullsFn(obj, remUndef, remNull) {
@@ -54,6 +63,8 @@ function generateClicked() {
 
 function render() {
   return m('div', [
+    m('h1', 'Compact JSON converter'),
+    m('div', 'Pretty prints JS/JSON into a compact format for ease of reading'),
     m('h3', 'Input:'),
     m('textarea', { spellcheck: false, rows: 20, style: 'width: 80%;', value: input, onchange: (ev) => { input = ev.currentTarget.value; } }),
     m('div',
